@@ -1,0 +1,9 @@
+/public/ft_thonghuyet
+/vendor
+.env
+.idea
+_ide_helper.php
+/public/upload
+/public/files/*
+/public/bower_components
+/public/kcfinder
