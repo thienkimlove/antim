@@ -23,8 +23,8 @@
     </div>
     <div class="copyRight">
         <div class="container">
-            <p class="copy">Chống mãn dục nam - Tăng cường sinh lực <br />
-          © 2016 Samnhungcuongluc.vn. Vui lòng ghi rõ nguồn khi sử dụng nội dung từ website này.</p>
+            <p class="copy">Giảm đau thắt ngực - Phòng nhồi máu cơ tim<br />
+          © 2016 Antim.vn. Vui lòng ghi rõ nguồn khi sử dụng nội dung từ website này.</p>
       </div>
     </div>
 </footer>

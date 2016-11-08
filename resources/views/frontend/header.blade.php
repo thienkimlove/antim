@@ -25,10 +25,6 @@
                     <a class="{{(isset($page) && $page == 'index') ? 'active' : ''}}" href="{{url('/')}}" title="">TRANG CHỦ</a>
                 </li>
 
-                <li>
-                    <a class="{{(isset($page) && $page == 'product') ? 'active' : ''}}" href="{{url('product')}}" title="">Sản phẩm</a>
-                </li>
-
                 @if ($headerCategories->count() > 0)
                     @foreach ($headerCategories as $headerCategory)
                         <li>
@@ -43,7 +39,9 @@
                         </li>
                     @endforeach
                 @endif
-
+                <li>
+                    <a class="{{(isset($page) && $page == 'product') ? 'active' : ''}}" href="{{url('product')}}" title="">Sản phẩm</a>
+                </li>
 
                 <li>
                     <a class="{{(isset($page) && $page == 'cau-hoi-thuong-gap') ? 'active' : ''}}" href="{{url('cau-hoi-thuong-gap')}}" title="">Hỏi đáp</a>
