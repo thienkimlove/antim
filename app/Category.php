@@ -2,20 +2,28 @@
 
 namespace App;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model implements SluggableInterface
+class Category extends Model
 {
-    use SluggableTrait;
+    use Sluggable;
+    use SluggableScopeHelpers;
 
-    protected $sluggable = array(
-        'build_from' => 'name',
-        'save_to'    => 'slug',
-        'unique'          => true,
-        'on_update'       => true,
-    );
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 
     protected $fillable = [
         'name',
@@ -51,7 +59,7 @@ class Category extends Model implements SluggableInterface
         if ($this->subCategories->count() == 0) {
             return Post::where('category_id', $this->id)->where('status', true)->orderBy('updated_at', 'desc')->limit(6)->get();
         } else {
-            $categoryIds = $this->subCategories->lists('id')->all();
+            $categoryIds = $this->subCategories->pluck('id')->all();
             $categoryIds[] = $this->id;
             return Post::whereIn('category_id', $categoryIds)->where('status', true)->orderBy('updated_at', 'desc')->limit(6)->get();
         }

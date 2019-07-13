@@ -3,10 +3,10 @@
         <div class="boxFooter clearFix">
             <div class="areaSocial">
                 <ul class="listSocial clearFix">
-                    <li><a href="#" class="se">Search</a></li>
-                    <li><a href="#" class="yu">Youtube</a></li>
-                    <li><a href="#" class="sk">Skype</a></li>
-                    <li><a href="#" class="go">googleplus</a></li>
+                    <li><a href="http://www.antim.vn" target="_blank" class="se">Search</a></li>
+                    <li><a href="https://www.youtube.com/user/tuelinhgroup" target="_blank" class="yu">Youtube</a></li>
+                    <li><a href="https://www.facebook.com/antim.vn" target="_blank" class="sk">Skype</a></li>
+                    <li><a href="http://www.antim.vn" target="_blank" class="go">googleplus</a></li>
                 </ul>
             </div>
             <div class="areaLink">

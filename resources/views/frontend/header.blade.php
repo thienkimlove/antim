@@ -1,4 +1,4 @@
-<header class="header">
+﻿<header class="header">
     <div class="header-mid">
         <div class="fix">
             <h1>
@@ -13,8 +13,8 @@
                 {!! Form::close() !!}
             </div>
             <ul class="nav-social">
-                <li><a href=""><img src="{{url('frontend/images/i_fb.png')}}" alt=""></a></li>
-                <li><a href=""><img src="{{url('frontend/images/i_ytube.png')}}" alt=""></a></li>
+                <li><a href="https://www.facebook.com/antim.vn" target="_blank"><img src="{{url('frontend/images/i_fb.png')}}" alt=""></a></li>
+                <li><a href="https://www.youtube.com/user/tuelinhgroup" target="_blank"><img src="{{url('frontend/images/i_ytube.png')}}" alt=""></a></li>
             </ul>
         </div>
     </div>
@@ -28,7 +28,7 @@
                 @if ($headerCategories->count() > 0)
                     @foreach ($headerCategories as $headerCategory)
                         <li>
-                            <a class="{{(isset($page) && ($page == $headerCategory->slug || in_array($page, $headerCategory->subCategories->lists('slug')->all()))) ? 'active' : ''}}" href="{{url($headerCategory->slug)}}">{{$headerCategory->name}}</a>
+                            <a class="{{(isset($page) && ($page == $headerCategory->slug || in_array($page, $headerCategory->subCategories->pluck('slug')->all()))) ? 'active' : ''}}" href="{{url($headerCategory->slug)}}">{{$headerCategory->name}}</a>
                             @if ($headerCategory->subCategories->count() > 0)
                                 <ul>
                                     @foreach ($headerCategory->subCategories as $childCategory)

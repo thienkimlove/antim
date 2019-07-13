@@ -9,6 +9,20 @@
                 <li>Hỏi đáp chuyên gia</li>
             </ul>
             <div class="col-left">
+                <div class="box-contact cf">
+                    <div class="form-question">
+                        {!! Form::open(array('url' => 'save_question')) !!}
+                        <input type="text" name="ask_person" class="txt txt-name" placeholder="Họ và tên"/>
+                        <input type="email" name="ask_email" class="txt txt-email" placeholder="Email"/>
+                        <input type="number" name="ask_phone" class="txt txt-phone" placeholder="Số điện thoại"/>
+                        <input type="text" name="ask_address" class="txt txt-add" placeholder="Địa chỉ"/>
+                        <textarea name="question" class="txt txt-content" placeholder="Nội dung"></textarea>
+                        <input type="submit" value="gửi đi" class="btn btn-submit"/>
+                        <input type="reset" value="Làm lại" class="btn btn-reset"/>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+
                 <div class="box-faq">
                     @if ($mainQuestion)
                         <article class="item">
@@ -50,35 +64,16 @@
                                     <span>{{$question->question}}</span>
                                 </p>
                             </div>
-                            <div id="accordion">
-                                <a href="#" class="answer">Xem trả lời</a>
-                                <div class="accordion">
-                                    <div class="content">
-                                        <p>
-                                          {{$question->answer}}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <details>
+                                <summary>Xem trả lời</summary>
+                                {{$question->answer}}
+                            </details>
                         </article>
                     @endforeach
                     <!-- /paging -->
                     <div class="boxPaging">
                         @include('pagination.default', ['paginate' => $questions])
                     </div><!--//news-list-->
-                </div>
-                <div class="box-contact cf">
-                    <div class="form-question">
-                        {!! Form::open(array('url' => 'save_question')) !!}
-                            <input type="text" name="ask_person" class="txt txt-name" placeholder="Họ và tên"/>
-                            <input type="email" name="ask_email" class="txt txt-email" placeholder="Email"/>
-                            <input type="number" name="ask_phone" class="txt txt-phone" placeholder="Số điện thoại"/>
-                            <input type="text" name="ask_address" class="txt txt-add" placeholder="Địa chỉ"/>
-                            <textarea name="question" class="txt txt-content" placeholder="Nội dung"></textarea>
-                            <input type="submit" value="gửi đi" class="btn btn-submit"/>
-                            <input type="reset" value="Làm lại" class="btn btn-reset"/>
-                        {!! Form::close() !!}
-                    </div>
                 </div>
 
             @foreach ($middleIndexBanner as $banner)

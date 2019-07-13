@@ -2,20 +2,28 @@
 
 namespace App;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements SluggableInterface
+class Post extends Model
 {
-    use SluggableTrait;
+    use Sluggable;
+    use SluggableScopeHelpers;
 
-    protected $sluggable = array(
-        'build_from' => 'title',
-        'save_to'    => 'slug',
-        'unique'          => true,
-        'on_update'       => true,
-    );
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
     protected $fillable = [
         'title',
         'category_id',
@@ -73,14 +81,14 @@ class Post extends Model implements SluggableInterface
      */
     public function getTagListAttribute()
     {
-        return $this->tags->lists('name')->all();
+        return $this->tags->pluck('name')->all();
     }
 
     public function getRelatedPostsAttribute()
     {
         $limit = 5;
         
-        $post_tag = $this->tags->lists('id');
+        $post_tag = $this->tags->pluck('id');
 
         $relatedPosts = Post::publish()
             ->whereHas('tags', function($q) use ($post_tag){
@@ -104,7 +112,7 @@ class Post extends Model implements SluggableInterface
         }
         if ($additionPosts) {
             foreach ($additionPosts as $post) {
-               if (!in_array($post->id, $relatedPosts->lists('id')->all())) {
+               if (!in_array($post->id, $relatedPosts->pluck('id')->all())) {
                    $relatedPosts->push($post);
                }
             }

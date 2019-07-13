@@ -1,4 +1,4 @@
-@extends('frontend')
+﻿@extends('frontend')
 
 @section('content')
 
@@ -190,6 +190,10 @@
                         </div>
                     </div>
                 @endif
+                    <ul class="listButton clearFix">
+                        <li class="ilocal"><a href="http://www.antim.vn/phan-phoi">Xem điểm bán An tim</a></li>
+                        <li class="icall"><a href="http://www.antim.vn/lien-he">1900 6482 - 0912 571 190</a></li>
+                    </ul>
             </div><!--//col-left-->
             @include('frontend.right_index')
             <div class="clear"></div>

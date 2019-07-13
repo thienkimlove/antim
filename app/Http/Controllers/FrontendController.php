@@ -22,7 +22,7 @@ class FrontendController extends Controller
     protected function generateMeta($case = null, $meta = [], $mainContent = null)
     {
         $defaultLogo = url(env('LOGO_URL'));
-        $settings = Setting::lists('value', 'name')->all();
+        $settings = Setting::pluck('value', 'name')->all();
         switch ($case) {
             default :
                 return [
@@ -357,7 +357,7 @@ class FrontendController extends Controller
             } else {
                 //parent categories
                 $posts = Post::publish()
-                    ->whereIn('category_id', $category->subCategories->lists('id')->all())
+                    ->whereIn('category_id', $category->subCategories->pluck('id')->all())
                     ->latest('updated_at')
                     ->paginate(10);
 

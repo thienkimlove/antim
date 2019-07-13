@@ -14,8 +14,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{$meta_url}}">
     <meta property="og:image" content="{{$meta_image}}">
-    <meta property="og:site_name" content="Sâm nhung ">
-	<meta property="fb:app_id" content="1619483608380263" />
+    <meta property="og:site_name" content="An tim">
+	<meta property="fb:app_id" content="1781829405405921" />
 
     <meta name="twitter:card" content="Card">
     <meta name="twitter:url" content="{{$meta_url}}">
@@ -33,7 +33,7 @@
     <meta name="DESCRIPTION" content="{{$meta_desc}}"/>
     <meta name="KEYWORDS" content="{{$meta_keywords}}"/>
     <meta name="ROBOTS" content="index,follow"/>
-    <meta name="AUTHOR" content="Thông huyết"/>
+    <meta name="AUTHOR" content="An tim Tuệ Linh"/>
     <meta name="RESOURCE-TYPE" content="DOCUMENT"/>
     <meta name="DISTRIBUTION" content="GLOBAL"/>
     <meta name="COPYRIGHT" content="Copyright 2013 by Goethe"/>
@@ -57,9 +57,9 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1619483608380263',
+      appId      : '1781829405405921',
       xfbml      : true,
-      version    : 'v2.7'
+      version    : 'v2.8'
     });
   };
 
@@ -88,5 +88,16 @@
 <script type="text/javascript" src="{{url('frontend/js/ScrollToFixed/jquery-scrolltofixed-min.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/fixedsidebar.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/common.js')}}"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87614809-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>

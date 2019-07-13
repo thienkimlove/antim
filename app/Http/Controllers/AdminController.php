@@ -12,7 +12,12 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('auth.backend',  ['except' => [
+            'ajax',
+            'logout',
+            'login',
+            'login_post'
+        ]]);
     }
 
     /**

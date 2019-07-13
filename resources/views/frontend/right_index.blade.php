@@ -53,4 +53,19 @@
             {!! Form::close() !!}
         </div>
     </div>
+    @if ($rightNews && $rightNews->count() > 0)
+    <div class="boxHot cf hot-news">
+        <h3 class="global-title"><a href="{{url('tin-tuc')}}">Tin nổi bật</a></h3>
+        @foreach ($rightNews as $post)
+            <div class="item cf">
+                <a href="{{url($post->slug.'.html')}}" class="thumb">
+                    <img src="{{url('img/cache/100x80/'.$post->image)}}" alt="hot" width="100" height="80">
+                </a>
+                <h4>
+                    <a href="{{url($post->slug.'.html')}}">{{$post->title}}</a>
+                </h4>
+            </div>
+        @endforeach
+    </div>
+    @endif
 </div><!--//col-right-->

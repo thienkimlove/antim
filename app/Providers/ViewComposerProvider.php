@@ -53,8 +53,17 @@ class ViewComposerProvider extends ServiceProvider
             $view->with('footerCategories',  Category::whereNull('parent_id')->get());
         });
 
-        view()->composer('frontend.right_index', function ($view) {            
-            
+        view()->composer('frontend.right_index', function ($view) {
+
+            $agent = new Agent();
+
+
+            if (!$agent->isMobile() && !$agent->isTablet()) {
+                $rightNews =  Post::publish()->latest('updated_at')->limit(2)->get();
+            } else {
+                $rightNews = null;
+            }
+            $view->with('rightNews',  $rightNews);
             $view->with('featureVideos',  Video::latest('updated_at')->limit(2)->get());           
         });
 

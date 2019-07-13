@@ -1,4 +1,9 @@
 ﻿<div class="col-right">
+<div class="box-adv">
+        <a href="#">
+            <img src="{{url('frontend/images/tuvan_300_72.jpg')}}" alt="Tổng đài">
+        </a>
+    </div>
     @if ($featureVideos->count() > 0)
         <div class="box-video">
             <h3 class="global-title"><a href="{{url('video')}}">Góc videos</a></h3>
@@ -23,12 +28,35 @@
             </a>
         </div>
     @endforeach
+	<div class="box-consult cf">
+        <article class="item">
+            <a href="" title="">
+                <img src="{{url('frontend/images/tuvan02.jpg')}}" width="306" height="134" alt="" class="thumbs">
+            </a>
+            <h3>
+                <a href="" title="">
+                    Tổng đài: 0912571190</a></h3>
+        </article></div>
+    <div class="box-contact">
+        <h3>Đặt câu hỏi với chuyên gia</h3>
+        <div class="col-right">
+            {!! Form::open(array('url' => 'save_question')) !!}
+                <input type="text" name="ask_person" class="txt txt-name" placeholder="Họ và tên"/>
+                <input type="email" name="ask_email" class="txt txt-email" placeholder="Email"/>
+                <input type="number" name="ask_phone" class="txt txt-phone" placeholder="Số điện thoại"/>
+                <input type="text" name="ask_address" class="txt txt-add" placeholder="Địa chỉ"/>
+                <textarea name="question" class="txt txt-content" placeholder="Nội dung"></textarea>
+                <input type="submit" value="gửi đi" class="btn btn-submit"/>
+                <span class="mail-name">contact@tuelinh.com</span>
+            {!! Form::close() !!}
+        </div>
+    </div>
         <div class="Social">
-            <div class="fb-page" data-href="https://www.facebook.com/samnhungcuongluc.vn" data-width="300"
+            <div class="fb-page" data-href="https://www.facebook.com/antim.vn" data-width="300"
                  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
                  data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/samnhungcuongluc.vn" class="fb-xfbml-parse-ignore"><a
-                            href="https://www.facebook.com/samnhungcuongluc.vn">Sâm Nhung Cường Lực</a>
+                <blockquote cite="https://www.facebook.com/antim.vn" class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/antim.vn">An tim Tuệ Linh</a>
                 </blockquote>
             </div>
         </div>

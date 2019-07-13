@@ -161,7 +161,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        //Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
 
